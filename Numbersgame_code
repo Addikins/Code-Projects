@@ -1,0 +1,230 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Numbers_Game
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool playAgain = true;
+            bool correctAnswer = true;
+            bool lowRangeSuccess = true;
+            bool highRangeSuccess = true;
+            bool rangeAquire = false;
+            int high;
+            int low;
+            do
+            {
+                Console.WriteLine("Let's play a game! I want you to guess a number for me.");
+                Console.WriteLine("First off, give me a low number:");
+                do {
+                    string lowInput = Console.ReadLine();
+                    lowRangeSuccess = int.TryParse(lowInput, out low);
+                    if (!int.TryParse(lowInput, out low))
+                    {
+                        Console.WriteLine("Please input a low number:");
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Thanks!");
+                        Console.WriteLine();
+                        rangeAquire = true;
+                    }
+
+                } while (rangeAquire == false);
+                Console.WriteLine("Now, please give me a high number:");
+                Console.WriteLine();
+                do
+                {
+                    string highInput = Console.ReadLine();
+                    highRangeSuccess = int.TryParse(highInput, out high);
+                    if (!int.TryParse(highInput, out high) || low >= high)
+                    {
+                        Console.WriteLine("Please input a high number:");
+                        rangeAquire = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Thank you again!");
+                        Console.WriteLine();
+                        rangeAquire = true;
+                    }
+                } while (rangeAquire == false);
+                Random random = new Random();
+                int returnedValue = random.Next(low, high);
+                int Guess;
+                int g = 0;
+                string guessstring;
+                Console.WriteLine("I'm thinking of a number between "+low+" and "+high+", guess it for a cookie!");
+                do
+                {
+                    guessstring = (Console.ReadLine());
+                    bool success = int.TryParse(guessstring, out Guess);
+
+                    g++;
+                    if (!success)
+                    {
+                        g--;
+                        Console.WriteLine("Incorrect input, guess a number between 1 and 100, ya dork.");
+                        Console.WriteLine();
+                    }
+                    else if (Guess < returnedValue)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Higher than " + Guess);
+                        Console.WriteLine("You've made " + g + " guesses! Guess again!");
+                        Console.WriteLine();
+                    }
+                    else if (Guess > returnedValue)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Lower than " + Guess);
+                        Console.WriteLine( "You've made " + g + " guesses! Guess again!");
+                        Console.WriteLine();
+                    }
+                } while (Guess != returnedValue);
+                if (Guess == returnedValue)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Good fucking job, you guessed " + returnedValue + " and after " + g + " guesses, you were correct!");
+                    Console.WriteLine("Have a cookie <3");
+                    Console.WriteLine();
+                    do
+                    {
+
+
+                        Console.WriteLine("Would you like to play again?");
+                        Console.WriteLine();
+                        String playAgainanswer = Console.ReadLine();
+                        switch (playAgainanswer)
+                        {
+                            case "y":
+                                playAgain = true;
+                                correctAnswer = true;
+                                Console.WriteLine();
+                                Console.WriteLine("Great, let's do this!");
+                                Console.WriteLine();
+                                break;
+                            case "Yes":
+                                playAgain = true;
+                                correctAnswer = true;
+                                Console.WriteLine();
+                                Console.WriteLine("Great, let's do this!");
+                                Console.WriteLine();
+                                break;
+                            case "yes":
+                                playAgain = true;
+                                correctAnswer = true;
+                                Console.WriteLine();
+                                Console.WriteLine("Great, let's do this!");
+                                Console.WriteLine();
+                                break;
+                            case "Y":
+                                playAgain = true;
+                                correctAnswer = true;
+                                Console.WriteLine();
+                                Console.WriteLine("Great, let's do this!");
+                                Console.WriteLine();
+                                break;
+                            case "YES":
+                                playAgain = true;
+                                correctAnswer = true;
+                                Console.WriteLine();
+                                Console.WriteLine("Great, let's do this!");
+                                Console.WriteLine();
+                                break;
+                            case "yES":
+                                playAgain = true;
+                                correctAnswer = true;
+                                Console.WriteLine("Stop breaking me :( ");
+                                Console.WriteLine();
+                                Console.WriteLine("Great, let's do this!");
+                                Console.WriteLine();
+                                break;
+                            case "yeS":
+                                playAgain = true;
+                                correctAnswer = true;
+                                Console.WriteLine("Stop breaking me :( ");
+                                Console.WriteLine();
+                                Console.WriteLine("Great, let's do this!");
+                                Console.WriteLine();
+                                break;
+                            case "yEs":
+                                playAgain = true;
+                                correctAnswer = true;
+                                Console.WriteLine("Stop breaking me :( ");
+                                Console.WriteLine();
+                                Console.WriteLine("Great, let's do this!");
+                                Console.WriteLine();
+                                break;
+                            case "YeS":
+                                playAgain = true;
+                                correctAnswer = true;
+                                Console.WriteLine("Stop breaking me :( ");
+                                Console.WriteLine();
+                                Console.WriteLine("Great, let's do this!");
+                                Console.WriteLine();
+                                break;
+                            case "YEs":
+                                playAgain = true;
+                                correctAnswer = true;
+                                Console.WriteLine("Stop breaking me :( ");
+                                Console.WriteLine();
+                                Console.WriteLine("Great, let's do this!");
+                                Console.WriteLine();
+                                break;
+                            case "no":
+                                playAgain = false;
+                                correctAnswer = true;
+                                Console.WriteLine();
+                                Console.WriteLine("Thanks for playing!");
+                                break;
+                            case "n":
+                                playAgain = false;
+                                correctAnswer = true;
+                                Console.WriteLine();
+                                Console.WriteLine("Thanks for playing!");
+                                break;
+                            case "N":
+                                playAgain = false;
+                                correctAnswer = true;
+                                Console.WriteLine();
+                                Console.WriteLine("Thanks for playing!");
+                                break;
+                            case "No":
+                                playAgain = false;
+                                correctAnswer = true;
+                                Console.WriteLine("Thanks for playing!");
+                                break;
+                            case "NO":
+                                playAgain = false;
+                                correctAnswer = true;
+                                Console.WriteLine();
+                                Console.WriteLine("Thanks for playing!");
+                                break;
+                            case "nO":
+                                playAgain = false;
+                                correctAnswer = true;
+                                Console.WriteLine();
+                                Console.WriteLine("Nice try buddy.");
+                                Console.WriteLine("Thanks for playing!");
+                                break;
+                            default:
+                                correctAnswer = false;
+                                Console.WriteLine();
+                                Console.WriteLine("I'm not sure what you mean..");
+                                Console.WriteLine();
+                                break;
+
+                        }
+                    } while (correctAnswer != true);
+                }
+            } while (playAgain == true);    
+        }
+    }
+}
