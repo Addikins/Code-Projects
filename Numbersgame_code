@@ -143,7 +143,7 @@ namespace Numbers_Game
                 if (Guess == returnedValue)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Good fucking job, you guessed " + returnedValue + " and after " + g + " guesses, you were correct!");
+                    Console.WriteLine("Good job, you guessed " + returnedValue + " and after " + g + " guesses, you were correct!");
                     Console.WriteLine("Have a cookie <3");
                     Console.WriteLine();
                 }
