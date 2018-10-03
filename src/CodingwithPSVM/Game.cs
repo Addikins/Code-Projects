@@ -14,7 +14,8 @@ namespace CodingwithPSVM
         {
 
             var hero = CreateHero();
-
+            var enemy = new Enemy(EnemyClass.AllClasses[0]);
+            Console.WriteLine($"{enemy.EnemyClass.Name} The wise\n Exp:{enemy.EnemyClass.Exp}");
             Console.WriteLine(hero.GetStatus());
         }
 
