@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodingwithPSVM
 {
-    public class Potion:IItem
+    public class Potion : IItem
     {
         public static List<Potion> AllPots = new List<Potion>
         {
@@ -15,10 +15,12 @@ namespace CodingwithPSVM
             new Potion("Major Healing Potion", 75, .5, 5),
             new Potion("Super Healing Potion", 100, .5, 10)
         };
+
         public string Name { get; set; }
         public int Health { get; set; }
         public double Weight { get; set; }
         public int MinLevel { get; set; }
+
         public Potion(string name, int health, double weight, int minlevel)
         {
             Name = name;

@@ -10,9 +10,9 @@ namespace CodingwithPSVM
     {
         private Random Random = new Random();
         private UserInput UserInput = new UserInput();
+
         public void Start()
         {
-
             var hero = CreateHero();
             var enemy = new Enemy(EnemyClass.AllClasses[0]);
             Console.WriteLine($"{enemy.EnemyClass.Name} The wise\n Exp:{enemy.EnemyClass.Exp}");
@@ -27,11 +27,12 @@ namespace CodingwithPSVM
             Console.WriteLine("Which class do you want?");
             var heroClass = UserInput.ChooseHeroClass();
 
-            var armor = new Armor("No Armor", 0, "Yer naked", 0,0);
-            var weapon = new Weapon("No Weapon", 0, "Just flail around a bit", 0,0);
+            var armor = new Armor("No Armor", 0, "Yer naked", 0, 0);
+            var weapon = new Weapon("No Weapon", 0, "Just flail around a bit", 0, 0);
 
             return new Hero(name, heroClass, armor, weapon);
         }
+
         private IItem FindLoot()
         {
             var lootChance = Random.Next(4);

@@ -5,11 +5,10 @@ namespace CodingwithPSVM
     public class EnemyClass
     {
         public static List<EnemyClass> AllClasses = new List<EnemyClass>
-            {
-                new EnemyClass("Whelp", 50, 1, 2, 25),
-                new EnemyClass("Bruiser", 100, 3, 4, 50),
-
-            };
+        {
+            new EnemyClass("Whelp", 50, 1, 2, 25),
+            new EnemyClass("Bruiser", 100, 3, 4, 50),
+        };
 
         public string Name { get; set; }
         public int Health { get; set; }

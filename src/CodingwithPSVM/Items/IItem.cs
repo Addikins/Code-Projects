@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodingwithPSVM
 {
-   public interface IItem
+    public interface IItem
     {
         string Name { get; set; }
         int MinLevel { get; set; }
