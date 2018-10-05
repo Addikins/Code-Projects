@@ -2,7 +2,7 @@
 
 namespace CodingwithPSVM
 {
-    public class Weapon:IItem
+    public class Weapon : IItem
     {
         public static List<Weapon> AllWeapons = new List<Weapon>
         {

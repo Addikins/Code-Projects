@@ -26,17 +26,17 @@ namespace CodingwithPSVM
         public int MaxHealth { get; set; }
         public int Health { get; set; }
         public int Defense { get; set; }
-        public int Attack { get;  set; }
+        public int Attack { get; set; }
         public int Level { get; set; }
         public int Exp { get; set; }
-    
+
         private void LevelUp()
         {
             Inventory.MaxSize++;
             Level++;
             MaxHealth += 100;
         }
-        
+
         public void Heal(int amount)
         {
             Health += amount;
@@ -45,14 +45,16 @@ namespace CodingwithPSVM
                 Health = MaxHealth;
             }
         }
+
         public void AddExp(int amount)
         {
-                Exp += amount;
-            while(Exp > Math.Pow(Level*10, 1.25))
+            Exp += amount;
+            while (Exp > Math.Pow(Level * 10, 1.25))
             {
                 LevelUp();
             }
         }
+
         public string GetStatus()
         {
             return $@"Status:

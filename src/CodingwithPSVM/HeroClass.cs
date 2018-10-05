@@ -5,10 +5,10 @@ namespace CodingwithPSVM
     public class HeroClass
     {
         public static List<HeroClass> AllClasses = new List<HeroClass>
-            {
-                new HeroClass("Knight", 300, 1, 5),
-                new HeroClass("Warrior", 400, 3, 6),
-            };
+        {
+            new HeroClass("Knight", 300, 1, 5),
+            new HeroClass("Warrior", 400, 3, 6),
+        };
 
         public string Name { get; set; }
         public int Health { get; set; }

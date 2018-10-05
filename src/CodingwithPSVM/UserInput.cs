@@ -11,7 +11,6 @@ namespace CodingwithPSVM
             const int maxLength = 15;
             while (true)
             {
-
                 var input = Console.ReadLine();
                 if (input.Length >= minLength && input.Length <= maxLength)
                 {
@@ -21,6 +20,7 @@ namespace CodingwithPSVM
                 Console.WriteLine($"Hero name must between {minLength} and {maxLength} characters.");
             }
         }
+
         public HeroClass ChooseHeroClass()
         {
             var heroClasses = HeroClass.AllClasses;
@@ -50,6 +50,7 @@ namespace CodingwithPSVM
                         return heroClass;
                     }
                 }
+
                 Console.WriteLine("Invalid input");
             }
         }

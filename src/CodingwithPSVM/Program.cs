@@ -12,7 +12,7 @@ namespace CodingwithPSVM
         {
             Console.WriteLine("Hello Hero!");
 
-           var game = new Game();
+            var game = new Game();
             game.Start();
         }
     }
