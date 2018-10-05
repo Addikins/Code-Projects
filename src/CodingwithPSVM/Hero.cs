@@ -2,8 +2,9 @@
 
 namespace CodingwithPSVM
 {
-    public class Hero
+    public class Hero : Fighter
     {
+
         public Hero(string name, HeroClass heroClass, Armor armor, Weapon weapon)
         {
             Name = name;
@@ -24,9 +25,6 @@ namespace CodingwithPSVM
         public Inventory Inventory { get; set; }
 
         public int MaxHealth { get; set; }
-        public int Health { get; set; }
-        public int Defense { get; set; }
-        public int Attack { get; set; }
         public int Level { get; set; }
         public int Exp { get; set; }
 
@@ -37,7 +35,7 @@ namespace CodingwithPSVM
             MaxHealth += 100;
         }
 
-        public void Heal(int amount)
+        public override void Heal(int amount)
         {
             Health += amount;
             if (Health > MaxHealth)

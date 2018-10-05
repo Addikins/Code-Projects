@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Enemy.cs" />
     <Compile Include="EnemyClass.cs" />
+    <Compile Include="Fighter.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Food.cs" />
     <Compile Include="Game.cs" />
