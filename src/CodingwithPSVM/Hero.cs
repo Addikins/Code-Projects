@@ -43,11 +43,6 @@ namespace CodingwithPSVM
             }
         }
 
-        public override void TakeDamage(int attack)
-        {
-            Health -= attack - GetDefense();
-        }
-
         public void AddExp(int amount)
         {
             Exp += amount;
@@ -57,7 +52,7 @@ namespace CodingwithPSVM
             }
         }
 
-        public int GetDefense()
+        public override int GetDefense()
         {
             return HeroClass.Defense + Armor.Defense;
         }

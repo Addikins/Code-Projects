@@ -26,9 +26,9 @@ namespace CodingwithPSVM
             }
         }
 
-        public override void TakeDamage(int attack)
+        public override int GetDefense()
         {
-            Health -= attack - Defense;
+            return Defense;
         }
 
         public string GetStatus()

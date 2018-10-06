@@ -11,6 +11,18 @@ namespace CodingwithPSVM
         public int Health { get; set; }
 
         public abstract void Heal(int amount);
-        public abstract void TakeDamage(int attack);
+        public void TakeDamage(int amount, bool ignoreDefense)
+        {
+            if (!ignoreDefense)
+            {
+                Health -= amount - GetDefense();
+            }
+            else
+            {
+                Health -= amount;
+            }
+        }
+
+        public abstract int GetDefense();
     }
 }

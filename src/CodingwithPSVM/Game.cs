@@ -37,7 +37,7 @@ namespace CodingwithPSVM
                 switch (choice.ToLower())
                 {
                     case "attack":
-                        enemy.TakeDamage(hero.GetAttack());
+                        enemy.TakeDamage(hero.GetAttack(), false);
                         break;
                     case "run":
                         Console.WriteLine("You get away!");
@@ -49,7 +49,7 @@ namespace CodingwithPSVM
 
                 if (enemy.Health > 0)
                 {
-                    hero.TakeDamage(enemy.Attack);
+                    hero.TakeDamage(enemy.Attack, false);
                 }
                 if (hero.Health <= 0 || enemy.Health <= 0)
                 {
