@@ -14,8 +14,6 @@ namespace CodingwithPSVM
 
             MaxHealth = heroClass.Health;
             Health = heroClass.Health;
-            Defense = heroClass.Defense;
-            Attack = heroClass.Attack;
         }
 
         public string Name { get; set; }
@@ -44,6 +42,11 @@ namespace CodingwithPSVM
             }
         }
 
+        public override void TakeDamage(int attack)
+        {
+            Health -= attack - GetDefense();
+        }
+
         public void AddExp(int amount)
         {
             Exp += amount;
@@ -53,12 +56,22 @@ namespace CodingwithPSVM
             }
         }
 
+        public int GetDefense()
+        {
+            return HeroClass.Defense + Armor.Defense;
+        }
+
+        public int GetAttack()
+        {
+            return HeroClass.Attack + Weapon.Attack;
+        }
+
         public string GetStatus()
         {
             return $@"Status:
 {Name} the {HeroClass.Name}
 Level:{Level} Exp:{Exp}
-Health:{Health}/{MaxHealth}    Defense:{Defense}    Attack:{Attack}
+Health:{Health}/{MaxHealth}    Defense:{GetDefense()}    Attack:{GetAttack()}
 Armorset: {Armor.Name} ({Armor.Description})
 Weapon: {Weapon.Name} ({Weapon.Description})";
         }

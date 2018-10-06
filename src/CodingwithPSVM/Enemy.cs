@@ -14,6 +14,8 @@ namespace CodingwithPSVM
         }
 
         public EnemyClass EnemyClass { get; set; }
+        public int Defense { get; set; }
+        public int Attack { get; set; }
 
         public override void Heal(int amount)
         {
@@ -22,6 +24,11 @@ namespace CodingwithPSVM
             {
                 Health = EnemyClass.Health;
             }
+        }
+
+        public override void TakeDamage(int attack)
+        {
+            Health -= attack - Defense;
         }
 
         public string GetStatus()

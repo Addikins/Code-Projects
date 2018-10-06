@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodingwithPSVM.UserInterface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +15,46 @@ namespace CodingwithPSVM
         public void Start()
         {
             var hero = CreateHero();
+            Console.WriteLine(hero.GetStatus());
+            
             var enemy = new Enemy(EnemyClass.AllClasses[0]);
             Console.WriteLine($"{enemy.EnemyClass.Name} The wise\n Exp:{enemy.EnemyClass.Exp}");
-            Console.WriteLine(hero.GetStatus());
+            Fight(hero, enemy);
+        }
+
+        private void Fight(Hero hero, Enemy enemy)
+        {
+            List<MenuOption> options = new List<MenuOption>
+            {
+                new MenuOption("Attack", $"Use a melee attack against the {enemy.EnemyClass.Name}"),
+                new MenuOption("Run", $"Run away from the {enemy.EnemyClass.Name}")
+            };
+            while(true) 
+            {
+                var choice = UserInput.ChooseOption(options);
+
+                switch (choice.ToLower())
+                {
+                    case "attack":
+                        enemy.TakeDamage(hero.GetAttack());
+                        break;
+                    case "run":
+                        Console.WriteLine("You get away!");
+                        return;
+                    default:
+                        Console.WriteLine("Error");
+                        break;
+                }
+
+                if (enemy.Health > 0)
+                {
+                    hero.TakeDamage(enemy.Attack);
+                }
+                if (hero.Health <= 0 || enemy.Health <= 0)
+                {
+                    break;
+                }
+            }
         }
 
         private Hero CreateHero()

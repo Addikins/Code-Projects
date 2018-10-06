@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodingwithPSVM.UserInterface;
+using System;
 using System.Collections.Generic;
 
 namespace CodingwithPSVM
@@ -48,6 +49,39 @@ namespace CodingwithPSVM
                     if (input == heroClass.Name.ToLower())
                     {
                         return heroClass;
+                    }
+                }
+
+                Console.WriteLine("Invalid input");
+            }
+        }
+
+        internal string ChooseOption(List<MenuOption> options)
+        {
+
+            var i = 0;
+            foreach (var option in options)
+            {
+                Console.WriteLine($"({++i}) {option.ToString()}");
+            }
+
+            while (true)
+            {
+                var input = Console.ReadLine().ToLower();
+                if (int.TryParse(input, out var number))
+                {
+                    number--;
+                    if (number >= 0 && number < options.Count)
+                    {
+                        return options[number].Identifier;
+                    }
+                }
+
+                foreach (var option in options)
+                {
+                    if (input == option.Identifier.ToLower())
+                    {
+                        return option.Identifier;
                     }
                 }
 
