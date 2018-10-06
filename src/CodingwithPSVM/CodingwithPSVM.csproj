@@ -50,6 +50,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="HeroClass.cs" />
+    <Compile Include="Items\Equipment.cs" />
     <Compile Include="Items\IItem.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Items\Potion.cs" />

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace CodingwithPSVM
+namespace CodingwithPSVM.Items
 {
-    public class Armor : IItem
+    public class Armor : Equipment
     {
         public static List<Armor> AllArmorsets = new List<Armor>
         {
@@ -13,18 +13,11 @@ namespace CodingwithPSVM
         };
 
         public int Defense { get; set; }
-        public int MinLevel { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public double Weight { get; set; }
 
         public Armor(string name, int defense, string description, int minLevel, double weight)
+            : base(name, minLevel, weight, description)
         {
-            Name = name;
             Defense = defense;
-            Description = description;
-            MinLevel = minLevel;
-            Weight = weight;
         }
     }
 }
