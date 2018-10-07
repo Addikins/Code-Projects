@@ -17,7 +17,9 @@ namespace Addikins.BasicRpg
 
             var enemy = new Enemy(EnemyClass.AllClasses[0]);
             Console.WriteLine($"{enemy.EnemyClass.Name} The wise\n Exp:{enemy.EnemyClass.Exp}");
+
             Fight(hero, enemy);
+            Console.WriteLine($"Fight results:\nHero: {hero.GetStatus()}\n\nEnemy: {enemy.GetStatus()}");
         }
 
         private void Fight(Hero hero, Enemy enemy)
