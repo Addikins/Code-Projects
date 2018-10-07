@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace CodingwithPSVM.Items
+namespace Addikins.BasicRpg.Items
 {
     public class Armor : Equipment
     {
-        public static List<Armor> AllArmorsets = new List<Armor>
+        public static List<Armor> AllArmorSets = new List<Armor>
         {
             new Armor("Scarf", 1, "A simple tattered scarf.", 0, 2),
             new Armor("Baseball Cap", 2, "Not your favorite team but it will do...", 0, 2),

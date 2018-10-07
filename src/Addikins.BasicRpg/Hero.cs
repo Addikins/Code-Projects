@@ -1,11 +1,10 @@
 ﻿using System;
-using CodingwithPSVM.Items;
+using Addikins.BasicRpg.Items;
 
-namespace CodingwithPSVM
+namespace Addikins.BasicRpg
 {
     public class Hero : Fighter
     {
-
         public Hero(string name, HeroClass heroClass, Armor armor, Weapon weapon)
         {
             Name = name;
@@ -68,7 +67,7 @@ namespace CodingwithPSVM
 {Name} the {HeroClass.Name}
 Level:{Level} Exp:{Exp}
 Health:{Health}/{MaxHealth}    Defense:{GetDefense()}    Attack:{GetAttack()}
-Armorset: {Armor.Name} ({Armor.Description})
+Armor set: {Armor.Name} ({Armor.Description})
 Weapon: {Weapon.Name} ({Weapon.Description})";
         }
     }

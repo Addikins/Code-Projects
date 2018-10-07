@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CodingwithPSVM.Items
+namespace Addikins.BasicRpg.Items
 {
     public class Weapon : Equipment
     {

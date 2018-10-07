@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Addikins.BasicRpg.Items;
 
-namespace CodingwithPSVM
+namespace Addikins.BasicRpg
 {
     public class Inventory
     {
