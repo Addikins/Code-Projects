@@ -33,7 +33,7 @@ namespace Addikins.BasicRpg
 
         public string GetStatus()
         {
-            return $@"Status:
+            return $@"
 {EnemyClass.Name}
 Health:{Health}/{EnemyClass.Health}    Defense:{Defense}    Attack:{Attack}";
         }

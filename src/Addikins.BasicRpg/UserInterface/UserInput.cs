@@ -58,6 +58,8 @@ namespace Addikins.BasicRpg.UserInterface
         internal string ChooseOption(List<MenuOption> options)
         {
             var i = 0;
+            Console.WriteLine();
+            Console.WriteLine("What will you do?");
             foreach (var option in options)
             {
                 Console.WriteLine($"({++i}) {option.ToString()}");
@@ -66,6 +68,7 @@ namespace Addikins.BasicRpg.UserInterface
             while (true)
             {
                 var input = Console.ReadLine().ToLower();
+                Console.WriteLine();
                 if (int.TryParse(input, out var number))
                 {
                     number--;

@@ -63,12 +63,13 @@ namespace Addikins.BasicRpg
 
         public string GetStatus()
         {
-            return $@"Status:
+            return $@"
 {Name} the {HeroClass.Name}
 Level:{Level} Exp:{Exp}
 Health:{Health}/{MaxHealth}    Defense:{GetDefense()}    Attack:{GetAttack()}
 Armor set: {Armor.Name} ({Armor.Description})
-Weapon: {Weapon.Name} ({Weapon.Description})";
+Weapon: {Weapon.Name} ({Weapon.Description})
+";
         }
     }
 }

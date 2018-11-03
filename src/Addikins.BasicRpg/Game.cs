@@ -16,10 +16,10 @@ namespace Addikins.BasicRpg
             Console.WriteLine(hero.GetStatus());
 
             var enemy = new Enemy(EnemyClass.AllClasses[0]);
-            Console.WriteLine($"{enemy.EnemyClass.Name} The wise\n Exp:{enemy.EnemyClass.Exp}");
+            Console.WriteLine($"An enemy approaches!\n{enemy.GetStatus()}");
 
             Fight(hero, enemy);
-            Console.WriteLine($"Fight results:\nHero: {hero.GetStatus()}\n\nEnemy: {enemy.GetStatus()}");
+            Console.WriteLine($"Fight results:\n{hero.GetStatus()}\n{enemy.GetStatus()}");
         }
 
         private void Fight(Hero hero, Enemy enemy)
@@ -37,7 +37,8 @@ namespace Addikins.BasicRpg
                 switch (choice.ToLower())
                 {
                     case "attack":
-                        enemy.TakeDamage(hero.GetAttack(), false);
+                       var damageTaken = enemy.TakeDamage(hero.GetAttack(), ignoreDefense: false);
+                        Console.WriteLine($"{hero.Name} dealt {damageTaken} damage to the {enemy.EnemyClass.Name}!");
                         break;
                     case "run":
                         Console.WriteLine("You get away!");
@@ -49,7 +50,8 @@ namespace Addikins.BasicRpg
 
                 if (enemy.Health > 0)
                 {
-                    hero.TakeDamage(enemy.Attack, false);
+                    var damageTaken = hero.TakeDamage(enemy.Attack, ignoreDefense: false);
+                    Console.WriteLine($"{enemy.EnemyClass.Name} attacked {hero.Name} for {damageTaken} damage!");
                 }
 
                 if (hero.Health <= 0 || enemy.Health <= 0)

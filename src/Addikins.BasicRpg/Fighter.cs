@@ -8,16 +8,25 @@ namespace Addikins.BasicRpg
 
         public abstract void Heal(int amount);
 
-        public void TakeDamage(int amount, bool ignoreDefense)
+        public int TakeDamage(int amount, bool ignoreDefense)
         {
+            int actualDamage = CalculateDamage(amount, ignoreDefense);
+            Health -= actualDamage;
+            return actualDamage;
+        }
+
+        private int CalculateDamage(int amount, bool ignoreDefense)
+        {
+            int diff;
             if (!ignoreDefense)
             {
-                Health -= amount - GetDefense();
+                diff = amount - GetDefense();
             }
             else
             {
-                Health -= amount;
+                diff = amount;
             }
+            return Math.Max(diff, 0);
         }
 
         public abstract int GetDefense();
