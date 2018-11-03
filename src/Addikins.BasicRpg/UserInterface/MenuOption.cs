@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CodingwithPSVM.UserInterface
+namespace Addikins.BasicRpg.UserInterface
 {
     public class MenuOption
     {

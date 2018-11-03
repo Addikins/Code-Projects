@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodingwithPSVM
+namespace Addikins.BasicRpg
 {
     public class Enemy : Fighter
     {

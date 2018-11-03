@@ -1,12 +1,9 @@
-﻿using CodingwithPSVM.UserInterface;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CodingwithPSVM.Items;
+using Addikins.BasicRpg.Items;
+using Addikins.BasicRpg.UserInterface;
 
-namespace CodingwithPSVM
+namespace Addikins.BasicRpg
 {
     public class Game
     {
@@ -17,20 +14,23 @@ namespace CodingwithPSVM
         {
             var hero = CreateHero();
             Console.WriteLine(hero.GetStatus());
-            
+
             var enemy = new Enemy(EnemyClass.AllClasses[0]);
             Console.WriteLine($"{enemy.EnemyClass.Name} The wise\n Exp:{enemy.EnemyClass.Exp}");
+
             Fight(hero, enemy);
+            Console.WriteLine($"Fight results:\nHero: {hero.GetStatus()}\n\nEnemy: {enemy.GetStatus()}");
         }
 
         private void Fight(Hero hero, Enemy enemy)
         {
-            List<MenuOption> options = new List<MenuOption>
+            var options = new List<MenuOption>
             {
                 new MenuOption("Attack", $"Use a melee attack against the {enemy.EnemyClass.Name}"),
                 new MenuOption("Run", $"Run away from the {enemy.EnemyClass.Name}")
             };
-            while(true) 
+
+            while (true)
             {
                 var choice = UserInput.ChooseOption(options);
 
@@ -51,6 +51,7 @@ namespace CodingwithPSVM
                 {
                     hero.TakeDamage(enemy.Attack, false);
                 }
+
                 if (hero.Health <= 0 || enemy.Health <= 0)
                 {
                     break;
@@ -84,8 +85,9 @@ namespace CodingwithPSVM
                 case 2:
                     return GetLootFrom(Weapon.AllWeapons);
                 case 3:
+                    return GetLootFrom(Armor.AllArmorSets);
                 default:
-                    return GetLootFrom(Armor.AllArmorsets);
+                    return GetLootFrom(Food.AllFood);
             }
         }
 

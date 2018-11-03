@@ -1,8 +1,7 @@
-﻿using CodingwithPSVM.UserInterface;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace CodingwithPSVM
+namespace Addikins.BasicRpg.UserInterface
 {
     internal class UserInput
     {
@@ -58,7 +57,6 @@ namespace CodingwithPSVM
 
         internal string ChooseOption(List<MenuOption> options)
         {
-
             var i = 0;
             foreach (var option in options)
             {

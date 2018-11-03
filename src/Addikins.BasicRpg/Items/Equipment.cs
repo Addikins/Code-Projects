@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CodingwithPSVM.Items
+namespace Addikins.BasicRpg.Items
 {
     public abstract class Equipment : IItem
     {
-        public Equipment(string name, int minLevel, double weight, string description)
+        protected Equipment(string name, int minLevel, double weight, string description)
         {
             Name = name;
             MinLevel = minLevel;

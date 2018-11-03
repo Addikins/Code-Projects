@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CodingwithPSVM
+namespace Addikins.BasicRpg.Items
 {
     public class Potion : IItem
     {
@@ -21,12 +18,12 @@ namespace CodingwithPSVM
         public double Weight { get; set; }
         public int MinLevel { get; set; }
 
-        public Potion(string name, int health, double weight, int minlevel)
+        public Potion(string name, int health, double weight, int minLevel)
         {
             Name = name;
             Health = health;
             Weight = weight;
-            MinLevel = minlevel;
+            MinLevel = minLevel;
         }
     }
 }
