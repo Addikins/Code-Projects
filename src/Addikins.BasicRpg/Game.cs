@@ -14,12 +14,40 @@ namespace Addikins.BasicRpg
         {
             var hero = CreateHero();
             Console.WriteLine(hero.GetStatus());
+            GameLoop(hero);
+        }
 
-            var enemy = new Enemy(EnemyClass.AllClasses[0]);
-            Console.WriteLine($"An enemy approaches!\n{enemy.GetStatus()}");
+        private void GameLoop(Hero hero)
+        {
+            var quit = false;
+            while (!quit)
+            {
+                var enemy = new Enemy(EnemyClass.AllClasses[0]);
+                Console.WriteLine($"An enemy approaches!\n{enemy.GetStatus()}");
 
-            Fight(hero, enemy);
-            Console.WriteLine($"Fight results:\n{hero.GetStatus()}\n{enemy.GetStatus()}");
+                Fight(hero, enemy);
+                Console.WriteLine($"Fight results:\n{hero.GetStatus()}\n{enemy.GetStatus()}");
+
+                Console.WriteLine("Continue?");
+                var options = new List<MenuOption>
+                {
+                    new MenuOption("Continue", "Keep adventuring!"),
+                    new MenuOption("Quit", "Exits the current playthrough.")
+                };
+                var choice = UserInput.ChooseOption(options);
+
+                switch (choice.ToLower())
+                {
+                    case "continue":
+                        Console.WriteLine("Your hero presses on!\n");
+                        break;
+                    case "quit":
+                        Console.WriteLine("Your hero retires from advenutring...");
+                        quit = true;
+                        break;
+                }
+
+            }
         }
 
         private void Fight(Hero hero, Enemy enemy)
@@ -37,15 +65,14 @@ namespace Addikins.BasicRpg
                 switch (choice.ToLower())
                 {
                     case "attack":
-                       var damageTaken = enemy.TakeDamage(hero.GetAttack(), ignoreDefense: false);
+                        var damageTaken = enemy.TakeDamage(hero.GetAttack(), ignoreDefense: false);
                         Console.WriteLine($"{hero.Name} dealt {damageTaken} damage to the {enemy.EnemyClass.Name}!");
                         break;
                     case "run":
                         Console.WriteLine("You get away!");
                         return;
                     default:
-                        Console.WriteLine("Error");
-                        break;
+                        throw new ArgumentOutOfRangeException("That's not... what?\n");
                 }
 
                 if (enemy.Health > 0)

@@ -6,7 +6,8 @@ namespace Addikins.BasicRpg
     {
         public static List<EnemyClass> AllClasses = new List<EnemyClass>
         {
-            new EnemyClass("Whelp", 50, 1, 2, 25),
+            // Sets starting enemy stats
+            new EnemyClass("Whelp", 20, 1, 2, 25),
             new EnemyClass("Bruiser", 100, 3, 4, 50),
         };
 

@@ -74,15 +74,15 @@ namespace Addikins.BasicRpg.UserInterface
                     number--;
                     if (number >= 0 && number < options.Count)
                     {
-                        return options[number].Identifier;
+                        return options[number].ActionName;
                     }
                 }
 
                 foreach (var option in options)
                 {
-                    if (input == option.Identifier.ToLower())
+                    if (input == option.ActionName.ToLower())
                     {
-                        return option.Identifier;
+                        return option.ActionName;
                     }
                 }
 

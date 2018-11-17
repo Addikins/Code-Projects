@@ -4,18 +4,18 @@ namespace Addikins.BasicRpg.UserInterface
 {
     public class MenuOption
     {
-        public MenuOption(string identifier, string description)
+        public MenuOption(string actionName, string description)
         {
-            Identifier = identifier;
+            ActionName = actionName;
             Description = description;
         }
 
-        public string Identifier { get; set; }
+        public string ActionName { get; set; }
         public string Description { get; set; }
 
         public override string ToString()
         {
-            return $"{Identifier} - {Description}";
+            return $"{ActionName} - {Description}";
         }
     }
 }
