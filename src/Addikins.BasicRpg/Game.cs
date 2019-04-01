@@ -14,7 +14,34 @@ namespace Addikins.BasicRpg
         {
             var hero = CreateHero();
             Console.WriteLine(hero.GetStatus());
-            GameLoop(hero);
+            Console.WriteLine("\n        ----->");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine(
+                $@"The moon illuminates the dense, tall grass in the plains of your homeland. 
+There is a light breeze and the call of an owl in the distance.
+                                                ");
+            Console.ReadKey();
+            Console.WriteLine(
+                $@"You are a {hero.HeroClass.Name} living in a world of many wonders, and just as many dangers.
+The peace and harmony of your people... Your family and friends knew it well for many years...
+                                                ");
+            Console.ReadKey();
+            Console.WriteLine($@"That tranquility has been broken
+                                                ");
+            Console.ReadKey();
+            Console.WriteLine($@"A lurking danger has scurried it's way into the kingdom, and it has little plans to stay quiet
+                                                ");
+            Console.ReadKey();
+            Console.WriteLine($@"The wind changes direction, the bitter cold air now presses your face. Your 'HorseType', who has safely ferried you home from many battles, is restless
+                                                ");
+            Console.ReadKey();
+            Console.WriteLine($@"A foul stench pierces your senses. Blood has been shed tonight.
+
+                                                ----->");
+            Console.ReadKey();
+            Console.Clear();
+            GameLoop(hero); 
         }
 
         private void GameLoop(Hero hero)
